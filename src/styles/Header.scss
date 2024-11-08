@@ -1,0 +1,46 @@
+@import "./stylesStore/variables.scss";
+
+.header {
+  background-color: $color-backgroundWrapper !important;
+  justify-content: center;
+  padding: 23px 28px;
+  .pageName {
+    margin-left: 28px;
+    font-size: 19.98px;
+    font-weight: 600;
+    line-height: 29.98px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .searchBox {
+    display: flex;
+    align-items: center;
+    width: 215px;
+    height: 33.3px;
+    position: relative;
+    background-color: $color-background;
+    border-radius: 6.66px;
+    input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      padding: 10px 12.5px;
+      color: white;
+    }
+    input:focus {
+      outline: none;
+    }
+    .searchIcon {
+      position: absolute;
+      right: 12.5px;
+      color: $color-searchIcon;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .bellIcon {
+    color: $color-searchIcon;
+  }
+}
