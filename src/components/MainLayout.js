@@ -1,16 +1,20 @@
 import React from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import Header from "./Header";
 import Sidebar from "./sidebar/Sidebar";
 
 const MainLayout = () => {
   return (
-    <>
+    <div
+      style={{ position: "relative", display: "flex", flexDirection: "column" }}
+    >
       <Header />
-      <Sidebar />
-      <Outlet />
-    </>
+      <div style={{ display: "flex", gap: "20px" }}>
+        <Sidebar />
+        <Outlet />
+      </div>
+    </div>
   );
 };
 

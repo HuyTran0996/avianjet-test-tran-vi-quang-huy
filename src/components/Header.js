@@ -19,6 +19,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 
 import "../styles/Header.scss";
 import logo from "../images/logo.png";
+import jetos from "../images/jetos.png";
 import user from "../images/user.png";
 import SidebarSmallScreen from "./sidebar/SidebarSmallScreen";
 
@@ -147,15 +148,30 @@ export default function Header() {
               }}
               onClick={() => navigate("/")}
             >
-              <img
-                src={logo}
-                alt="logo"
-                style={{
-                  width: "157px",
-                  height: "36px",
-                  marginRight: "5px",
-                }}
-              />
+              <div className="logo">
+                <img
+                  className="icon"
+                  src={logo}
+                  alt="logo"
+                  style={{
+                    width: "55.44px",
+                    height: "36px",
+                    objectFit: "contain",
+                  }}
+                />
+
+                <img
+                  className="text"
+                  src={jetos}
+                  alt="JETOS"
+                  style={{
+                    width: "95.7px",
+                    height: "14.55px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+
               <Typography
                 className="pageName"
                 noWrap
