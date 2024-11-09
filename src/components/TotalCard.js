@@ -3,7 +3,6 @@ import "../styles/TotalCard.scss";
 import { ICONLIST } from "../data/data";
 
 const TotalCard = ({ item }) => {
-  console.log("oooo", item);
   return (
     <div className="totalCard">
       <div className="icon">
