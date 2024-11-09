@@ -1,4 +1,5 @@
 @import "./stylesStore/variables.scss";
+@import "./stylesStore/breakpoints.scss";
 
 .dashboard {
   position: relative;
@@ -10,5 +11,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
+    @include md {
+      justify-content: space-evenly;
+    }
   }
 }
