@@ -1,10 +1,11 @@
 import React from "react";
+import { Box } from "@mui/material";
 import "../styles/TotalCard.scss";
 import { ICONLIST } from "../data/data";
 
 const TotalCard = ({ item }) => {
   return (
-    <div className="totalCard">
+    <Box className="totalCard">
       <div className="icon">
         {ICONLIST.find((icon) => icon.title === item.title)?.icon}
       </div>
@@ -19,7 +20,7 @@ const TotalCard = ({ item }) => {
           }).format(item.amount)}
         </p>
       </div>
-    </div>
+    </Box>
   );
 };
 
