@@ -1,7 +1,7 @@
 @import "./stylesStore/variables.scss";
 .sidebar {
   width: 213.16px;
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   background-color: $color-backgroundWrapper;
   display: flex;
   flex-direction: column;
