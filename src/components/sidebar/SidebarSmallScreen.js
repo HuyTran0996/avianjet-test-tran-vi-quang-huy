@@ -11,6 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { NAVIGATION } from "../../data/data";
 import "../../styles/SidebarSmallScreen.scss";
+import mark from "../../images/mark.png";
 
 const NestedList = ({ item, depth = 1.5, onNavigate, pageName }) => {
   const navigate = useNavigate();
@@ -43,6 +44,18 @@ const NestedList = ({ item, depth = 1.5, onNavigate, pageName }) => {
               ? "title active"
               : "title"
           }
+        />
+
+        <img
+          src={mark}
+          alt="mark"
+          className="markPoint"
+          style={{
+            display:
+              checkName.toLowerCase() === item.segment.toLowerCase()
+                ? "block"
+                : "none",
+          }}
         />
       </ListItemButton>
     </div>

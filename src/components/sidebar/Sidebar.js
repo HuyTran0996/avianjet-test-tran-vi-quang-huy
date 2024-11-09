@@ -10,6 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { NAVIGATION } from "../../data/data";
 import "../../styles/Sidebar.scss";
+import mark from "../../images/mark.png";
 
 const NestedList = ({ item }) => {
   const location = useLocation();
@@ -57,6 +58,18 @@ const NestedList = ({ item }) => {
               : "title"
           }
         />
+
+        <img
+          src={mark}
+          alt="mark"
+          className="markPoint"
+          style={{
+            display:
+              checkName.toLowerCase() === item.segment.toLowerCase()
+                ? "block"
+                : "none",
+          }}
+        />
       </ListItemButton>
     </div>
   );
@@ -64,17 +77,15 @@ const NestedList = ({ item }) => {
 
 export default function Sidebar() {
   return (
-    <Box
+    <List
       className="sidebar"
       sx={{
         display: { xs: "none", sm: "flex" },
       }}
     >
-      <List>
-        {NAVIGATION.map((item) => (
-          <NestedList key={item.segment} item={item} />
-        ))}
-      </List>
-    </Box>
+      {NAVIGATION.map((item) => (
+        <NestedList key={item.segment} item={item} />
+      ))}
+    </List>
   );
 }

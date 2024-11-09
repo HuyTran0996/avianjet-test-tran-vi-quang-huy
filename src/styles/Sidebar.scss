@@ -5,9 +5,9 @@
   background-color: $color-backgroundWrapper;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   .item {
+    display: flex;
     &:hover {
       background-color: $color-background;
     }
@@ -18,16 +18,19 @@
 
     .title {
       color: $color-text;
-      font-size: 11.66px;
-      font-weight: 400;
-      line-height: 17.49px;
-      text-align: left;
-      text-underline-position: from-font;
-      text-decoration-skip-ink: none;
+      @include title;
     }
 
     .active {
       color: $color-activePage;
+      .iconNav {
+        @include icon-active;
+      }
+    }
+
+    .markPoint {
+      position: absolute;
+      right: 0;
     }
   }
 }
