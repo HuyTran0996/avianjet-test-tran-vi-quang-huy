@@ -13,13 +13,8 @@
     margin-right: 20px;
   }
   .pageName {
+    @include pageName;
     margin-left: 28px;
-    font-size: 19.98px;
-    font-weight: 600;
-    line-height: 29.98px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
   }
   .searchBox {
     display: flex;

@@ -1,0 +1,34 @@
+@import "./stylesStore/variables.scss";
+
+.totalCard {
+  background-color: $color-backgroundWrapper;
+  width: 214.82px;
+  height: 95.75px;
+  border-radius: 8.33px;
+  opacity: 0px;
+  angle: 0 deg;
+
+  display: flex;
+  padding: 16.65px;
+  gap: 30px;
+  align-items: center;
+  .icon {
+    background-color: $color-background;
+    height: 40px;
+    width: 40px;
+    border-radius: 8.33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    .title {
+      @include title;
+      color: $color-text;
+    }
+    .amount {
+      @include amount;
+      color: #ffffff;
+    }
+  }
+}

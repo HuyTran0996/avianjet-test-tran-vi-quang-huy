@@ -14,6 +14,11 @@ import user from "../images/icons/user.svg";
 import message from "../images/icons/message.svg";
 import setting from "../images/icons/setting.svg";
 
+import wallet2 from "../images/icons/wallet2.svg";
+import income from "../images/icons/income.svg";
+import expenses from "../images/icons/expenses.svg";
+import saving from "../images/icons/saving.svg";
+
 //////MENU LIST//////////////
 export const NAVIGATION = [
   {
@@ -53,3 +58,22 @@ export const NAVIGATION = [
   },
 ];
 /////END/////
+
+export const ICONLIST = [
+  {
+    title: "Balance",
+    icon: <img src={wallet2} alt="Balance" className="iconNav" />,
+  },
+  {
+    title: "Income",
+    icon: <img src={income} alt="Income" className="iconNav" />,
+  },
+  {
+    title: "Expenses",
+    icon: <img src={expenses} alt="Expenses" className="iconNav" />,
+  },
+  {
+    title: "Savings",
+    icon: <img src={saving} alt="Savings" className="iconNav" />,
+  },
+];

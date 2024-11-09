@@ -14,6 +14,25 @@ $color-text: #a9a9a9;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+@mixin pageName {
+  font-family: Poppins;
+  font-size: 19.98px;
+  font-weight: 600;
+  line-height: 29.98px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+@mixin amount {
+  font-family: Poppins;
+  font-size: 26.64px;
+  font-weight: 500;
+  line-height: 39.97px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
 
 //note: to convert hex color to filter, copy the color hex code and visit this website to convert: https://isotropic.co/tool/hex-color-to-css-filter/
 @mixin icon-active {
