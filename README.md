@@ -15,4 +15,6 @@ These technologies allow me to craft responsive, interactive web applications th
 
 ### Check source at: https://github.com/HuyTran0996/avianjet-test-tran-vi-quang-huy
 
+### The accession to the GitHub repository was granted to this email: binh@avianjets.com
+
 ### Check demo app at: https://aviantest.netlify.app/
