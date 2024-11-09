@@ -12,7 +12,6 @@ import {
   Menu,
 } from "@mui/material";
 
-import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
@@ -21,6 +20,9 @@ import "../styles/Header.scss";
 import logo from "../images/logo.png";
 import jetos from "../images/jetos.png";
 import user from "../images/user.png";
+import searchIcon from "../images/searchIcon.png";
+import Notification from "../images/Notification.png";
+
 import SidebarSmallScreen from "./sidebar/SidebarSmallScreen";
 
 export default function Header() {
@@ -29,6 +31,7 @@ export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [searchValue, setSearchValue] = React.useState("");
+  const [count, SetCount] = React.useState(0);
 
   const pageName = location.pathname.includes("transactions")
     ? "Transactions"
@@ -109,10 +112,16 @@ export default function Header() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsNoneOutlinedIcon />
-          </Badge>
+          {/* note: if count=0, use Notification, if count>0 use MUI Badge to show the count number */}
+          {count === 0 ? (
+            <img src={Notification} alt="greenDot" className="greenDot" />
+          ) : (
+            <Badge badgeContent={count} color="error">
+              <NotificationsNoneOutlinedIcon className="bellIcon" />
+            </Badge>
+          )}
         </IconButton>
+
         <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -129,6 +138,15 @@ export default function Header() {
       </MenuItem>
     </Menu>
   );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchValue.trim() === "") {
+      alert(`your input is empty`);
+    } else {
+      alert(`your input: ${searchValue}`);
+    }
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -186,15 +204,19 @@ export default function Header() {
           {/* right items */}
           <Box sx={{ display: "flex", alignItems: "center " }}>
             {/* search bar */}
-            <div className="searchBox">
+            {/* <div className="searchBox"> */}
+            <form onSubmit={handleSubmit} className="searchBox">
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
               />
-              <SearchIcon className="searchIcon" />
-            </div>
+              <button type="submit">
+                <img src={searchIcon} alt="searchIcon" className="searchIcon" />
+              </button>
+            </form>
+            {/* </div> */}
 
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -203,9 +225,14 @@ export default function Header() {
                 aria-label="show 17 new notifications"
                 color="inherit"
               >
-                <Badge badgeContent={17} color="error">
-                  <NotificationsNoneOutlinedIcon className="bellIcon" />
-                </Badge>
+                {/* note: if count=0, use Notification, if count>0 use MUI Badge to show the count number */}
+                {count === 0 ? (
+                  <img src={Notification} alt="greenDot" className="greenDot" />
+                ) : (
+                  <Badge badgeContent={count} color="error">
+                    <NotificationsNoneOutlinedIcon className="bellIcon" />
+                  </Badge>
+                )}
               </IconButton>
               <IconButton
                 size="large"

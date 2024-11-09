@@ -5,6 +5,7 @@
   justify-content: center;
   // note: MUI appbar padding: 0 24px
   padding: 23px 4px;
+  box-shadow: none !important;
   .logo {
     display: flex;
     align-items: center;
@@ -19,8 +20,8 @@
   .searchBox {
     display: flex;
     align-items: center;
-    width: 215px;
-    height: 33.3px;
+    width: 214.82px;
+    height: 33.31px;
     position: relative;
     background-color: $color-background;
     border-radius: 6.66px;
@@ -35,12 +36,22 @@
     input:focus {
       outline: none;
     }
-    .searchIcon {
+    button {
       position: absolute;
       right: 12.5px;
       color: $color-searchIcon;
       width: 15px;
       height: 15px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      transition: 0.3s;
+      &:hover {
+        filter: invert(52%) sepia(77%) saturate(462%) hue-rotate(85deg)
+          brightness(103%) contrast(98%);
+      }
     }
   }
   .bellIcon {
