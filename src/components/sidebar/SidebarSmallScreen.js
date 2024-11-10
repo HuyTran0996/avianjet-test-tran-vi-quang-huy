@@ -1,68 +1,17 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import IconButton from "@mui/material/IconButton";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import { NAVIGATION } from "../../data/data";
 import "../../styles/SidebarSmallScreen.scss";
-import mark from "../../images/mark.png";
 
-const NestedList = ({ item, depth = 1.5, onNavigate, pageName }) => {
-  const navigate = useNavigate();
+import NestedList from "./NestedList";
 
-  const handleClick = () => {
-    navigate(`/${item.segment}`);
-    onNavigate();
-  };
-
-  const checkName = pageName === "Dashboard" ? "" : pageName;
-
-  return (
-    <div className="item">
-      <ListItemButton onClick={handleClick} sx={{ pl: depth * 2 }}>
-        {item.icon && (
-          <ListItemIcon
-            className={
-              checkName.toLowerCase() === item.segment.toLowerCase()
-                ? "icon active"
-                : "icon"
-            }
-          >
-            {item.icon}
-          </ListItemIcon>
-        )}
-        <ListItemText
-          primary={item.title}
-          className={
-            checkName.toLowerCase() === item.segment.toLowerCase()
-              ? "title active"
-              : "title"
-          }
-        />
-
-        <img
-          src={mark}
-          alt="mark"
-          className="markPoint"
-          style={{
-            display:
-              checkName.toLowerCase() === item.segment.toLowerCase()
-                ? "block"
-                : "none",
-          }}
-        />
-      </ListItemButton>
-    </div>
-  );
-};
-
-export default function SidebarSmallScreen({ pageName }) {
+export default function SidebarSmallScreen() {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -89,8 +38,7 @@ export default function SidebarSmallScreen({ pageName }) {
               <NestedList
                 key={item.segment}
                 item={item}
-                onNavigate={() => toggleDrawer(false)()}
-                pageName={pageName}
+                toggle={() => toggleDrawer(false)()}
               />
             ))}
           </List>

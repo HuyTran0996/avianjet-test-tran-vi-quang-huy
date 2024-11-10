@@ -10,6 +10,7 @@ import Analytics from "./page/Analytics";
 import Personal from "./page/Personal";
 import Message from "./page/Message";
 import Setting from "./page/Setting";
+import NotFoundPage from "./page/NotFoundPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="personal" element={<Personal />} />
           <Route path="message" element={<Message />} />
           <Route path="setting" element={<Setting />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

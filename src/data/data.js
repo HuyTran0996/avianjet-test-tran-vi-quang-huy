@@ -22,6 +22,19 @@ export const NAVIGATION = [
     segment: "transactions",
     title: "Transactions",
     icon: <img src={transactions} alt="transactions" className="iconNav" />,
+    //note: if we need nested list, add the children like this, (uncomment to check).
+    // children: [
+    //   {
+    //     segment: "route1",
+    //     title: "Nest List 1",
+    //     icon: <img src={transactions} alt="transactions" className="iconNav" />,
+    //   },
+    //   {
+    //     segment: "route2",
+    //     title: "Nest List 2",
+    //     icon: <img src={transactions} alt="transactions" className="iconNav" />,
+    //   },
+    // ],
   },
   {
     segment: "wallet",

@@ -3,29 +3,4 @@
   width: 213.16px;
   height: 100%;
   background-color: $color-background;
-  .item {
-    &:hover {
-      background-color: $color-backgroundWrapper;
-    }
-
-    .icon {
-      color: $color-text;
-    }
-
-    .title {
-      color: $color-text;
-      @include title;
-    }
-
-    .active {
-      color: $color-activePage;
-      .iconNav {
-        @include icon-active;
-      }
-    }
-    .markPoint {
-      position: absolute;
-      right: 0;
-    }
-  }
 }

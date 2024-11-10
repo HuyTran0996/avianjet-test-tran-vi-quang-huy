@@ -7,32 +7,4 @@
   flex-direction: column;
   //note:MuiButtonBase-root padding: 8px 16px 8px 24px
   padding: 25.31px 0 !important;
-  .item {
-    display: flex;
-
-    &:hover {
-      background-color: $color-background;
-    }
-
-    .icon {
-      color: $color-text;
-    }
-
-    .title {
-      color: $color-text;
-      @include title;
-    }
-
-    .active {
-      color: $color-activePage;
-      .iconNav {
-        @include icon-active;
-      }
-    }
-
-    .markPoint {
-      position: absolute;
-      right: 0;
-    }
-  }
 }
